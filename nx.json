@@ -22,5 +22,12 @@
       }
     }
   },
-  "projects": {}
+  "projects": {
+    "api-admin": {
+      "tags": []
+    },
+    "api-public": {
+      "tags": []
+    }
+  }
 }
