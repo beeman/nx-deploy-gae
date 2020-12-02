@@ -56,8 +56,8 @@
           "builder": "@nrwl/workspace:run-commands",
           "options": {
             "commands": [
-              "cp package.json dist/apps/api-admin/",
-              "gcloud app deploy --appyaml dist/apps/api-admin/app.yaml --quiet --project=nxpm-api-admin"
+              "yarn ts-node -P ./tools/tsconfig.tools.json  ./tools/generate-package-json.ts dist/apps/api-admin/package.json",
+              "cd dist/apps/api-admin && gcloud app deploy --appyaml ./app.yaml --quiet --project=nxpm-api-admin"
             ]
           }
         }

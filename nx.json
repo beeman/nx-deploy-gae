@@ -1,7 +1,7 @@
 {
   "npmScope": "nx-deploy-gae",
   "affected": {
-    "defaultBase": "master"
+    "defaultBase": "main"
   },
   "implicitDependencies": {
     "angular.json": "*",
