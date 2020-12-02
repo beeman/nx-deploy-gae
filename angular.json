@@ -14,7 +14,10 @@
             "outputPath": "dist/apps/api-admin",
             "main": "apps/api-admin/src/main.ts",
             "tsConfig": "apps/api-admin/tsconfig.app.json",
-            "assets": ["apps/api-admin/src/assets"]
+            "assets": [
+              "apps/api-admin/src/assets",
+              "apps/api-admin/src/app.yaml"
+            ]
           },
           "configurations": {
             "production": {
@@ -48,6 +51,15 @@
             "jestConfig": "apps/api-admin/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "deploy": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              "cp package.json dist/apps/api-admin/",
+              "gcloud app deploy --appyaml dist/apps/api-admin/app.yaml --quiet --project=nxpm-api-admin"
+            ]
+          }
         }
       }
     },
@@ -64,7 +76,10 @@
             "outputPath": "dist/apps/api-public",
             "main": "apps/api-public/src/main.ts",
             "tsConfig": "apps/api-public/tsconfig.app.json",
-            "assets": ["apps/api-public/src/assets"]
+            "assets": [
+              "apps/api-public/src/assets",
+              "apps/api-public/src/app.yaml"
+            ]
           },
           "configurations": {
             "production": {
@@ -97,6 +112,14 @@
           "options": {
             "jestConfig": "apps/api-public/jest.config.js",
             "passWithNoTests": true
+          }
+        },
+        "deploy": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              "gcloud app deploy --appyaml dist/apps/api-public/app.yaml --quiet --project=nxpm-api-public"
+            ]
           }
         }
       }

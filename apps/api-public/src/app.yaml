@@ -1,0 +1,2 @@
+runtime: nodejs12
+entrypoint: PORT=8080 main.js
